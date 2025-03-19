@@ -17,7 +17,7 @@ export function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative py-20 overflow-hidden md:py-32 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
+			className="relative py-20 overflow-hidden md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
 		>
 			<div className="container px-4 md:px-6">
 				<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
