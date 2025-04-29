@@ -22,7 +22,7 @@ export function About() {
 					<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
 						About Me
 					</h2>
-					<div className="w-20 h-1 mt-4 mb-6 bg-primary"></div>
+
 					<p className="max-w-[700px] text-muted-foreground md:text-xl">
 						Get to know me better
 					</p>

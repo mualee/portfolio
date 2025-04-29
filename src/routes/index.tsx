@@ -113,9 +113,9 @@ function IndexPage() {
 	};
 
 	return (
-		<div className="relative px-4 md:px-0">
+		<div className="relative px-4 md:px-0 scroll-smooth">
 			<Navbar />
-			<section className="py-20 ">
+			<section className="pb-20 ">
 				<div className="flex flex-col items-center justify-center gap-12 overflow-hidden overflow-y-auto">
 					<Hero />
 					<About />

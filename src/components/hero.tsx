@@ -23,7 +23,7 @@ export function Hero() {
 				<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<motion.div
 						className="flex flex-col justify-center space-y-4"
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 					>
@@ -91,10 +91,11 @@ export function Hero() {
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ delay: 0.3, duration: 0.5 }}
 					>
-						<div className="relative h-[400px] w-[400px] rounded-full bg-gradient-to-r from-primary via-purple-500 to-primary/50 p-1">
+						<div className="relative h-[400px] w-[400px] rounded-full bg-gradient-to-r from-primary via-purple-100 to-primary/50 p-1">
 							<div className="absolute inset-0 overflow-hidden rounded-full">
 								<img
-									src="https://scontent.fvte2-3.fna.fbcdn.net/v/t39.30808-6/481466357_666514035723944_4176363109895264276_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG0RcrjoWHjmLxa22idwUhOsCAp6RtbD_uwICnpG1sP-5FFZoKS-x6z7r-aV-vWTWseMWOc-P80A_lCAPVHqREJ&_nc_ohc=3gU5uSssCR0Q7kNvgFFa60q&_nc_zt=23&_nc_ht=scontent.fvte2-3.fna&_nc_gid=AmZtOA1VKbvMrj55giufk07&oh=00_AYGwPdglXgfxOe01ZOmABcy1hkP1wpIuWCMID24YLZQN3w&oe=67D73D7C"
+									src="/images/mualee1.jpg"
+									// src="/images/mualee.png"
 									alt="Profile"
 									className="object-cover w-full h-full "
 								/>
