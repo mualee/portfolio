@@ -5,7 +5,7 @@ import {
 	Outlet,
 	ScrollRestoration,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+// import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NotFound } from "@/components/notFound";
 
@@ -16,7 +16,11 @@ export const Route = createRootRouteWithContext<{
 	queryClient: QueryClient;
 }>()({
 	component: Root,
-	notFoundComponent: NotFound,
+	notFoundComponent: () => (
+		<ThemeProvider>
+			<NotFound />
+		</ThemeProvider>
+	),
 });
 
 function Root() {
