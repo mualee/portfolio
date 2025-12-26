@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { ThemeProvider } from "@/components/theme-provider";
+import { NotFound } from "@/components/notFound";
 
 // UI Provider
 import { Toaster } from "@/components/ui/toaster";
@@ -15,6 +16,7 @@ export const Route = createRootRouteWithContext<{
 	queryClient: QueryClient;
 }>()({
 	component: Root,
+	notFoundComponent: NotFound,
 });
 
 function Root() {

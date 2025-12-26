@@ -30,7 +30,7 @@ useTexture.preload("/lailaolab-clamp-black.jpeg");
 
 export default function Card3d() {
 	return (
-		<Canvas camera={{ position: [0, 0, 10], fov: 20 }} style={{ width: '100%', height: '100%' }}>
+		<Canvas camera={{ position: [0, 0, 11], fov: 20 }} style={{ width: '100%', height: '100%' }}>
 			<ambientLight intensity={Math.PI} />
 			<Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
 				<Band />

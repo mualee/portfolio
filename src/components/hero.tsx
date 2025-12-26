@@ -19,12 +19,12 @@ export function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative py-20 overflow-hidden md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
+			className="relative pb-20 overflow-hidden lg:py-20 md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
 		>
 			<div className="container px-4 md:px-6">
-				<div className="grid sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+				<div className="grid  sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<motion.div
-						className="flex flex-col justify-center space-y-4"
+						className="flex flex-col justify-center order-2 space-y-4 lg:order-1"
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
@@ -87,7 +87,7 @@ export function Hero() {
 							</a>
 						</div>
 					</motion.div>
-					<div className="h-[350px] w-full sm:w-[400px] lg:h-[500px] lg:w-[700px]">
+					<div className="h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[700px]">
 						<motion.div
 							className="flex items-center justify-center w-full h-full"
 						initial={{ opacity: 0 }}
