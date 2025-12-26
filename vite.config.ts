@@ -24,5 +24,17 @@ export default defineConfig({
 
 	build: {
 		sourcemap: true,
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					'three': ['three'],
+					'react-three-fiber': ['@react-three/fiber'],
+					'react-three-drei': ['@react-three/drei'],
+					'react-three-rapier': ['@react-three/rapier'],
+					'framer': ['framer-motion'],
+					'vendor': ['react', 'react-dom', 'react/jsx-runtime'],
+				},
+			},
+		},
 	},
 });
