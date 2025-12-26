@@ -22,7 +22,7 @@ const Navbar = () => {
 	];
 
 	return (
-		<section className="sticky top-0 z-50 py-8 bg-background dark:bg-background/80">
+		<section className="sticky top-0 z-50 py-1 bg-background dark:bg-background/80">
 			<div className="container mx-auto">
 				<nav className="justify-between hidden lg:flex">
 					<div className="flex items-center gap-2">
