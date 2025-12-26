@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 //Card3d
-import Card3d from "./card3d";
+const Card3d = lazy(() => import("./card3d"));
 
 export function Hero() {
 	const [mounted, setMounted] = useState(false);
@@ -102,7 +102,9 @@ export function Hero() {
 									className="object-cover w-full h-full "
 								/>
 							</div> */}
-							<Card3d/>	
+						<Suspense fallback={<div className="w-full h-full rounded-lg animate-pulse bg-muted" />}>
+							<Card3d/>
+						</Suspense>
 						</motion.div>
 					</div>
 				</div>
