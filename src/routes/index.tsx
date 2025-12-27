@@ -13,6 +13,7 @@ import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { Skills } from "@/components/skills";
 import { Footer } from "@/components/footer";
+import { AllLogo } from "@/components/allLogo";
 
 // Magic Values
 
@@ -45,6 +46,7 @@ function IndexPage() {
 				<div className="flex flex-col items-center justify-center gap-12 overflow-hidden overflow-y-auto">
 					<Hero />
 					<About />
+					{/* <AllLogo/> */}
 					{/* <Projects /> */}
 					<Skills />
 					<Contact />
