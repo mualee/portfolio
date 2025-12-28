@@ -4,11 +4,14 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
+import {Snowfall  } from "react-snowfall";
+import { useTheme } from "./theme-provider";
 //Card3d
 const Card3d = lazy(() => import("./card3d"));
 
 export function Hero() {
 	const [mounted, setMounted] = useState(false);
+	const { theme } = useTheme();
 
 	useEffect(() => {
 		setMounted(true);
@@ -21,6 +24,7 @@ export function Hero() {
 			id="home"
 			className="relative pb-20 overflow-hidden lg:py-20 md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
 		>
+			<Snowfall color={theme === "dark" ? "#dee4fd" : "red"}/>
 			<div className="container px-4 md:px-6">
 				<div className="grid  sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<motion.div
