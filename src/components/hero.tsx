@@ -26,9 +26,9 @@ export function Hero() {
 		>
 			<Snowfall color={theme === "dark" ? "#dee4fd" : theme === "light" ?"red": "#dee4fd"}/>
 			<div className="container px-4 md:px-6">
-				<div className="grid w-full relative sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+				<div className="grid w-full lg:relative sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<motion.div
-						className="absolute flex flex-col justify-center order-2 w-full space-y-4 lg:order-1"
+						className="flex flex-col justify-center order-2 w-full space-y-4 lg:absolute lg:order-1"
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}

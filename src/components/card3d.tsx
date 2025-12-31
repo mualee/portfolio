@@ -102,6 +102,14 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 	const texture = useTexture("/lailaolab-clamp-black.jpeg");
 
 	const { width, height } = useThree((state) => state.size);
+	
+	// Responsive positioning
+	const isLargeScreen = width >= 1024; // lg breakpoint
+	const groupPos = isLargeScreen ? [0.5, 4.5, 0] : [0, 4, 0];
+	const j1Pos = isLargeScreen ? [-0.5, 0, 0] : [0.5, 0, 0];
+	const j2Pos = isLargeScreen ? [0, 0, 0] : [1, 0, 0];
+	const j3Pos = isLargeScreen ? [0.5, -0.5, 0] : [1.5, 0, 0];
+	
 	const [curve] = useState(
 		() =>
 			new THREE.CatmullRomCurve3([
@@ -188,15 +196,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
 	return (
 		<>
-			<group position={[0.5, 4.5, 0]}>
+			<group position={groupPos}>
 				<RigidBody ref={fixed} {...segmentProps} type="fixed" />
-				<RigidBody position={[-0.5, 0, 0]} ref={j1} {...segmentProps}>
+				<RigidBody position={j1Pos} ref={j1} {...segmentProps}>
 					<BallCollider args={[0.1]} />
 				</RigidBody>
-				<RigidBody position={[0, 0, 0]} ref={j2} {...segmentProps}>
+				<RigidBody position={j2Pos} ref={j2} {...segmentProps}>
 					<BallCollider args={[0.1]} />
 				</RigidBody>
-				<RigidBody position={[0.5, -0.5, 0]} ref={j3} {...segmentProps}>
+				<RigidBody position={j3Pos} ref={j3} {...segmentProps}>
 					<BallCollider args={[0.1]} />
 				</RigidBody>
 				<RigidBody
