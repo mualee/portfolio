@@ -188,15 +188,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
 	return (
 		<>
-			<group position={[0, 4, 0]}>
+			<group position={[0.5, 4.5, 0]}>
 				<RigidBody ref={fixed} {...segmentProps} type="fixed" />
-				<RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
+				<RigidBody position={[-0.5, 0, 0]} ref={j1} {...segmentProps}>
 					<BallCollider args={[0.1]} />
 				</RigidBody>
-				<RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
+				<RigidBody position={[0, 0, 0]} ref={j2} {...segmentProps}>
 					<BallCollider args={[0.1]} />
 				</RigidBody>
-				<RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
+				<RigidBody position={[0.5, -0.5, 0]} ref={j3} {...segmentProps}>
 					<BallCollider args={[0.1]} />
 				</RigidBody>
 				<RigidBody

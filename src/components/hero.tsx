@@ -22,13 +22,13 @@ export function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative pb-20 overflow-hidden lg:py-20 md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
+			className="relative pb-20 overflow-hidden lg:pt-10 lg:pb-20 md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
 		>
 			<Snowfall color={theme === "dark" ? "#dee4fd" : theme === "light" ?"red": "#dee4fd"}/>
 			<div className="container px-4 md:px-6">
-				<div className="grid  sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+				<div className="grid w-full relative sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<motion.div
-						className="flex flex-col justify-center order-2 space-y-4 lg:order-1"
+						className="absolute flex flex-col justify-center order-2 w-full space-y-4 lg:order-1"
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
@@ -91,9 +91,9 @@ export function Hero() {
 							</a>
 						</div>
 					</motion.div>
-					<div className="h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[700px]">
+					<div className=" h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[1800px]  ">
 						<motion.div
-							className="flex items-center justify-center w-full h-full"
+							className="flex items-center justify-center w-full h-full "
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 							transition={{ delay: 0.3, duration: 0.5 }}
@@ -106,7 +106,7 @@ export function Hero() {
 									className="object-cover w-full h-full "
 								/>
 							</div> */}
-						<Suspense fallback={<div className="w-full h-full rounded-lg animate-pulse bg-muted" />}>
+						<Suspense fallback={<div className="w-full h-full rounded-lg justify-left animate-pulse bg-muted" />}>
 							<Card3d/>
 						</Suspense>
 						</motion.div>
