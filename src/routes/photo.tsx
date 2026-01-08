@@ -88,9 +88,9 @@ function PhotoPage() {
                     alt={img.alt}
                     className="object-cover w-full h-64"
                   />
-                  <div className="p-2 text-sm text-center bg-muted/50">
+                  {/* <div className="p-2 text-sm text-center bg-muted/50">
                     {img.alt}
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
@@ -100,7 +100,7 @@ function PhotoPage() {
 
                   <DialogContent className="w-auto max-w-sm">
                 <DialogHeader >
-                  <DialogTitle>{selectedImage?.alt}</DialogTitle>
+                  <DialogTitle>Mualee</DialogTitle>
                  
                 </DialogHeader>
                 <div className="flex items-center justify-center">
