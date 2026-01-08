@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { buttonVariants } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
+
 
 const Navbar = () => {
 	const scrollToSection = (sectionId: string) => {
@@ -20,6 +22,12 @@ const Navbar = () => {
 		{ href: "#skills", label: "Skills" },
 		{ href: "#contact", label: "Contact" },
 	];
+
+	const linkItems = [
+		{ to: "/photo", label: "Photos" },
+	];
+
+
 
 	return (
 		<section className="sticky top-0 z-50 py-1 border bg-background dark:bg-background/80">
@@ -49,6 +57,21 @@ const Navbar = () => {
 								>
 									{item.label}
 								</a>
+							))}
+							{linkItems.map((item) => (
+								<Link
+									key={item.to}
+									to={item.to}
+									className={cn(
+										"text-muted-foreground",
+										navigationMenuTriggerStyle,
+										buttonVariants({
+											variant: "ghost",
+										}),
+									)}
+								>
+									{item.label}
+								</Link>
 							))}
 						</div>
 						<div className="flex gap-2">
