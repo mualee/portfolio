@@ -14,6 +14,7 @@ const Navbar = () => {
 			element.scrollIntoView({ behavior: "smooth" });
 		}
 	};
+	const OnIndex=window.location.pathname === '/';
 
 	const navigationItems = [
 		{ href: "#home", label: "Home" },
@@ -39,31 +40,68 @@ const Navbar = () => {
 					</div>
 					<div className="flex items-center gap-6">
 						<div className="flex items-center">
-							{navigationItems.map((item) => (
-								<a
-									key={item.href}
-									href={item.href}
-									onClick={(e) => {
-										e.preventDefault();
-										scrollToSection(item.href.substring(1));
-									}}
+							
+							{/* {!OnIndex && (
+								<Link
+									key="/"
+									to="/"
 									className={cn(
-										"text-muted-foreground",
+										"text-muted-foreground cursor-pointer",
 										navigationMenuTriggerStyle,
 										buttonVariants({
 											variant: "ghost",
 										}),
 									)}
 								>
-									{item.label}
-								</a>
-							))}
+									Home
+								</Link>
+							)}
+							 */}
+							{OnIndex ? (
+								navigationItems.map((item) => (
+									<a
+										key={item.href}
+										href={item.href}
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection(item.href.substring(1));
+										}}
+										className={cn(
+											"text-muted-foreground",
+											navigationMenuTriggerStyle,
+											buttonVariants({
+												variant: "ghost",
+											}),
+										)}
+									>
+										{item.label}
+									</a>
+								))
+							) : (
+								navigationItems.map((item) => (
+									<Link
+										key={item.href}
+										to="/"
+										hash={item.href.substring(1)}
+										className={cn(
+											"text-muted-foreground cursor-pointer",
+											navigationMenuTriggerStyle,
+											buttonVariants({
+												variant: "ghost",
+											}),
+										)}
+									>
+										{item.label}
+									</Link>
+								))
+							)}
+							
 							{linkItems.map((item) => (
 								<Link
 									key={item.to}
 									to={item.to}
 									className={cn(
-										"text-muted-foreground",
+										"text-muted-foreground cursor-pointer",
 										navigationMenuTriggerStyle,
 										buttonVariants({
 											variant: "ghost",

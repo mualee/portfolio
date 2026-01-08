@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import Navbar from '@/components/Navbar'
 import {
   Dialog,
   DialogContent,
@@ -69,7 +70,10 @@ function PhotoPage() {
   }
 
   return (
+    <div className="relative px-4 md:px-0 scroll-smooth">
+        <Navbar />
     <div className="container px-4 py-20 mx-auto">
+        
       <h1 className="mb-8 text-4xl font-bold text-center">Photo Gallery</h1>
 
       <div className="max-w-4xl mx-auto">
@@ -148,6 +152,9 @@ function PhotoPage() {
           </CardContent>
         </Card>
       </div>
+    </div>  
     </div>
+  
+    
   )
 }
