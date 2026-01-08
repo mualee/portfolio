@@ -13,7 +13,7 @@ import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { Skills } from "@/components/skills";
 import { Footer } from "@/components/footer";
-import { AllLogo } from "@/components/allLogo";
+// import { AllLogo } from "@/components/allLogo";
 
 // Magic Values
 

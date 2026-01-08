@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Navbar from '@/components/Navbar'
+import { Skeleton } from '@/components/ui/skeleton'
 import {
   Dialog,
   DialogContent,
@@ -18,6 +19,7 @@ export const Route = createFileRoute('/photo')({
 function PhotoPage() {
   const [currentPage, setCurrentPage] = useState(0)
   const [selectedImage, setSelectedImage] = useState<{ id: number; src: string; alt: string } | null>(null)
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const imagesPerPage = 9
 
   // Get available images (you can extend this array as you add more images)
@@ -69,6 +71,10 @@ function PhotoPage() {
     }
   }
 
+  const handleImageLoad = (id: number) => {
+    setLoadedImages((prev) => new Set(prev).add(id))
+  }
+
   return (
     <div className="relative px-4 md:px-0 scroll-smooth">
         <Navbar />
@@ -87,10 +93,14 @@ function PhotoPage() {
                   className="overflow-hidden transition-transform rounded-lg cursor-pointer hover:scale-105"
                   onClick={() => setSelectedImage(img)}
                 >
+                  {!loadedImages.has(img.id) && (
+                    <Skeleton className="w-full h-64" />
+                  )}
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="object-cover w-full h-64"
+                    className={`object-cover w-full h-64 ${!loadedImages.has(img.id) ? 'hidden' : ''}`}
+                    onLoad={() => handleImageLoad(img.id)}
                   />
                   {/* <div className="p-2 text-sm text-center bg-muted/50">
                     {img.alt}
