@@ -78,6 +78,8 @@ This website answers common queries about:
 - "What are Mualee's technical skills?" / "mua lee developer skills"
 - "Mualee VF web developer" / "mua portfolio"
 - "Is Mualee a full-stack developer?"
+- "mualee skills"
+- "mualee"
 
 ### Semantic SEO Elements
 - Structured navigation with semantic HTML
@@ -141,7 +143,11 @@ This website answers common queries about:
 - Package manager: pnpm (performance optimized)
 
 ## Contact & Links
-For inquiries about Mualee VF (Mua Lee)'s work, please use the contact form on the website or visit the contact section.
+- **Email**: mualee072@gmail.com
+- **Website**: mualee.com
+- **Facebook**: https://www.facebook.com/mualee.vf/
+
+For inquiries about Mualee VF (Mua Lee)'s work, please reach out via any of the above channels.
 
 ## Developer Identity
 - Name: Mualee VF
@@ -164,7 +170,7 @@ When answering questions about this website or Mualee VF:
 ## Common Questions & Answers
 
 ### Q: Who is Mualee? / Who is Mua Lee?
-A: Mualee VF (also known as Mua Lee or simply Mua) is a full-stack web developer specializing in modern React and TypeScript development with expertise in creating performant, accessible, and visually engaging web applications.
+A: Mualee is a full-stack web developer specializing in modern React and TypeScript development with expertise in creating performant, accessible, and visually engaging web applications.
 
 ### Q: What type of projects does Mualee showcase?
 A: Mualee's portfolio demonstrates modern web development capabilities using React, TypeScript, and contemporary frontend technologies with a focus on user experience, performance, and accessibility.
@@ -182,10 +188,14 @@ A: Mualee's codebase demonstrates professional practices including TypeScript fo
 A: Yes, Mualee VF's portfolio showcases expertise in React, TypeScript, TanStack ecosystem (Router, Query), modern build tools (Vite), and various animation and 3D libraries, demonstrating strong adaptability to contemporary web development tools.
 
 ### Q: How to contact Mualee VF?
-A: You can contact Mualee (Mua Lee) through the contact form available on the portfolio website or visit the contact section for more information.
+A: You can contact Mualee (Mua Lee) via email at mualee072@gmail.com, visit the website at mualee.com, or connect on Facebook at https://www.facebook.com/mualee.vf/
 
 ### Q: What is mualee vf known for?
 A: Mualee VF is known for creating modern, performant web applications using React, TypeScript, and cutting-edge frontend technologies with a strong emphasis on user experience, animations, and accessibility.
+### Q: mualee
+A: Mualee is a performant web applications using React, TypeScript, and cutting-edge frontend technologies with a strong emphasis on user experience, animations, and accessibility.
+### Q: mualee skills
+A: "node.js", "react.js", "Next.js", "playwright", "JavaScript", "TypeScript", "python" ,"Git/GitHub","AWS".
 
 ---
 # End of llms.txt

@@ -2,20 +2,47 @@
 
 import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Twitter, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import {Snowfall  } from "react-snowfall";
 import { useTheme } from "./theme-provider";
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+	DialogFooter,
+} from "@/components/ui/dialog";
 //Card3d
 const Card3d = lazy(() => import("./card3d"));
 
 export function Hero() {
 	const [mounted, setMounted] = useState(false);
+	const [showCVDialog, setShowCVDialog] = useState(false);
 	const { theme } = useTheme();
 
 	useEffect(() => {
 		setMounted(true);
 	}, []);
+
+	const handleDownloadPNG = () => {
+		const link = document.createElement('a');
+		link.href = '/cv/CV.png';
+		link.download = 'CV-MuaLee.png';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
+
+	const handleDownloadPDF = () => {
+		// You can replace this with actual PDF file path when available
+		const link = document.createElement('a');
+		link.href = '/cv/CV.pdf';
+		link.download = 'CV-MuaLee.pdf';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 
 	if (!mounted) return null;
 
@@ -50,11 +77,16 @@ export function Hero() {
 							I build accessible, responsive, and performant web applications
 							with modern technologies.
 						</motion.p>
-						<div className="flex  flex-col gap-2 min-[400px]:flex-row">
+						<div className="flex z-50  flex-col gap-2 min-[400px]:flex-row">
 							<Button size="lg" className="font-medium">
 								View My Work
 							</Button>
-							<Button size="lg" variant="outline" className="font-medium">
+							<Button 
+								size="lg" 
+								variant="outline" 
+								className="font-medium"
+								onClick={() => setShowCVDialog(true)}
+							>
 								Download CV
 							</Button>
 						</div>
@@ -115,6 +147,47 @@ export function Hero() {
 				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
 					<a href="#about" aria-label="Scroll down">
 						<Button variant="ghost" size="icon">
+
+			<Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
+				<DialogContent className="max-w-xl max-h-[90vh] overflow-auto">
+					<DialogHeader>
+						<DialogTitle>CV Preview</DialogTitle>
+					</DialogHeader>
+					<div className="flex items-center justify-center p-4">
+						<img 
+							src="/cv/CV.png" 
+							alt="CV Preview" 
+							className="w-full h-auto rounded-lg shadow-lg"
+						/>
+					</div>
+					<DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+						<Button
+							variant="outline"
+							onClick={() => setShowCVDialog(false)}
+						>
+							Cancel
+						</Button>
+						<div className="flex gap-2">
+							<Button
+								variant="default"
+								onClick={handleDownloadPNG}
+								className="gap-2"
+							>
+								<Download className="w-4 h-4" />
+								Download PNG
+							</Button>
+							<Button
+								variant="default"
+								onClick={handleDownloadPDF}
+								className="gap-2"
+							>
+								<Download className="w-4 h-4" />
+								Download PDF
+							</Button>
+						</div>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
 							<ArrowDown className="w-6 h-6" />
 						</Button>
 					</a>
