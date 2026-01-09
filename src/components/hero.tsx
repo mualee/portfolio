@@ -2,7 +2,7 @@
 
 import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Twitter, Download } from "lucide-react";
+import { ArrowDown, Github, Facebook , MessageCircleMore , Download } from "lucide-react";
 import { motion } from "framer-motion";
 import {Snowfall  } from "react-snowfall";
 import { useTheme } from "./theme-provider";
@@ -24,7 +24,12 @@ export function Hero() {
 	useEffect(() => {
 		setMounted(true);
 	}, []);
-
+const scrollToSection = (sectionId: string) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+		}
+	};
 	const handleDownloadPNG = () => {
 		const link = document.createElement('a');
 		link.href = '/cv/CV.png';
@@ -90,9 +95,9 @@ export function Hero() {
 								Download CV
 							</Button>
 						</div>
-						<div className="flex items-center gap-4 mt-4">
+						<div className="z-50 flex items-center gap-4 mt-4">
 							<a
-								href="https://github.com"
+								href="https://github.com/mualee"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="GitHub"
@@ -102,23 +107,23 @@ export function Hero() {
 								</Button>
 							</a>
 							<a
-								href="https://linkedin.com"
+								href="https://www.facebook.com/mualee.vf/"
 								target="_blank"
 								rel="noopener noreferrer"
-								aria-label="LinkedIn"
+								aria-label="Facebook"
 							>
 								<Button variant="ghost" size="icon">
-									<Linkedin className="w-5 h-5" />
+									<Facebook  className="w-5 h-5" />
 								</Button>
 							</a>
 							<a
-								href="https://twitter.com"
+								href="https://wa.me/8562055188317"
 								target="_blank"
 								rel="noopener noreferrer"
-								aria-label="Twitter"
+								aria-label="WhatsApp"
 							>
 								<Button variant="ghost" size="icon">
-									<Twitter className="w-5 h-5" />
+									<MessageCircleMore  className="w-5 h-5" />
 								</Button>
 							</a>
 						</div>
@@ -145,7 +150,14 @@ export function Hero() {
 					</div>
 				</div>
 				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
-					<a href="#about" aria-label="Scroll down">
+					<a 
+					key="#about"
+										href="#about"
+										onClick={(e) => {
+											e.preventDefault();
+											scrollToSection("#about".substring(1));
+										}}
+					aria-label="Scroll down">
 						<Button variant="ghost" size="icon">
 
 			<Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
