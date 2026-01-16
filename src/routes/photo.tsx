@@ -128,10 +128,11 @@ function PhotoPage() {
                   <Button
                     variant="outline"
                     onClick={() => setSelectedImage(null)}
+                    aria-label="Close image preview"
                   >
                     Cancel
                   </Button>
-                  <Button onClick={handleDownload}>
+                  <Button onClick={handleDownload} aria-label="Download image">
                     Download
                   </Button>
                 </DialogFooter>
@@ -145,6 +146,7 @@ function PhotoPage() {
                 variant="outline"
                 onClick={goToPreviousPage}
                 disabled={totalPages <= 1}
+                aria-label="Go to previous page"
               >
                 ← Previous
               </Button>
@@ -155,6 +157,7 @@ function PhotoPage() {
                 variant="outline"
                 onClick={goToNextPage}
                 disabled={totalPages <= 1}
+                aria-label="Go to next page"
               >
                 Next →
               </Button>

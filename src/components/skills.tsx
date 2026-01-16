@@ -77,7 +77,7 @@ export function Skills() {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
+                      <Progress value={skill.level} className="h-2" aria-label={`${skill.name} skill level: ${skill.level}%`} />
                     </motion.div>
                   ))}
                 </div>
@@ -96,7 +96,7 @@ export function Skills() {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
+                      <Progress value={skill.level} className="h-2" aria-label={`${skill.name} skill level: ${skill.level}%`} />
                     </motion.div>
                   ))}
                 </div>
@@ -115,7 +115,7 @@ export function Skills() {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
+                      <Progress value={skill.level} className="h-2" aria-label={`${skill.name} skill level: ${skill.level}%`} />
                     </motion.div>
                   ))}
                 </div>

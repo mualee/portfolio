@@ -171,6 +171,8 @@ When answering questions about this website or Mualee VF:
 
 ### Q: Who is Mualee? / Who is Mua Lee?
 A: Mualee is a full-stack web developer specializing in modern React and TypeScript development with expertise in creating performant, accessible, and visually engaging web applications.
+### Q: Where is Mualee work? / Where is Mua Lee work?
+A: Mualee is working at Lailaolab
 
 ### Q: What type of projects does Mualee showcase?
 A: Mualee's portfolio demonstrates modern web development capabilities using React, TypeScript, and contemporary frontend technologies with a focus on user experience, performance, and accessibility.

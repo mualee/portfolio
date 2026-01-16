@@ -19,10 +19,15 @@ const Card3d = lazy(() => import("./card3d"));
 export function Hero() {
 	const [mounted, setMounted] = useState(false);
 	const [showCVDialog, setShowCVDialog] = useState(false);
+	const [showCard3d, setShowCard3d] = useState(false);
 	const { theme } = useTheme();
 
 	useEffect(() => {
 		setMounted(true);
+		const timer = setTimeout(() => {
+			setShowCard3d(true);
+		}, 2500); // 2.5 seconds
+		return () => clearTimeout(timer);
 	}, []);
 const scrollToSection = (sectionId: string) => {
 		const element = document.getElementById(sectionId);
@@ -128,9 +133,9 @@ const scrollToSection = (sectionId: string) => {
 							</a>
 						</div>
 					</motion.div>
-					<div className=" h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[1800px]  ">
+					<div className="hidden lg:block h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[1800px] ">
 						<motion.div
-							className="flex items-center justify-center w-full h-full "
+							className={`${showCard3d ? 'hidden lg:block' : 'hidden'} flex items-center justify-center w-full h-full `}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 							transition={{ delay: 0.3, duration: 0.5 }}
@@ -148,6 +153,23 @@ const scrollToSection = (sectionId: string) => {
 						</Suspense>
 						</motion.div>
 					</div>
+					<motion.div
+						className="flex items-center justify-center lg:hidden"
+						initial={{ opacity: 0, scale: 0.8 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ delay: 0.3, duration: 0.5 }}
+					>
+						<div className="relative h-[307.2px] w-[204.6px]  from-primary via-purple-100 to-primary/50 p-1">
+							<div className="absolute inset-0 overflow-hidden ">
+								<img
+									src="/images/mualee_small.png"
+									// src="/images/mualee.png"
+									alt="Profile"
+									className="object-cover w-full h-full "
+								/>
+							</div>
+						</div>
+					</motion.div>
 				</div>
 				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
 					<a 
