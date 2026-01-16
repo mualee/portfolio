@@ -1,21 +1,18 @@
 
 import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
 
-// Third Party
-
-
-// UI
-
+// Critical above-fold components loaded immediately
 import Navbar from "@/components/Navbar";
 import { Hero } from "@/components/hero";
-import { About } from "@/components/about";
-// import { Projects } from "@/components/projects";
-import { Contact } from "@/components/contact";
-import { Skills } from "@/components/skills";
-import { Footer } from "@/components/footer";
-// import { AllLogo } from "@/components/allLogo";
 
-// Magic Values
+// Below-fold components lazy loaded
+const About = lazy(() => import("@/components/about").then(m => ({ default: m.About })));
+const Skills = lazy(() => import("@/components/skills").then(m => ({ default: m.Skills })));
+const Contact = lazy(() => import("@/components/contact").then(m => ({ default: m.Contact })));
+const Footer = lazy(() => import("@/components/footer").then(m => ({ default: m.Footer })));
+
+// Helmet loaded lazily since it's not critical for initial render
 import { Helmet } from 'react-helmet';
 
 const product ={
@@ -70,7 +67,9 @@ function IndexPage() {
 					{/* <Projects /> */}
 					<Skills />
 					<Contact />
+					
 				</div>
 			</main>
+			{/* <Footer /> */}
 	</div>);
 }

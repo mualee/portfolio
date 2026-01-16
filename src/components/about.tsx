@@ -29,10 +29,11 @@ export function About() {
 			<div className="container px-4 md:px-6">
 				<motion.div
 					ref={ref}
-					initial={{ opacity: 0, y: 20 }}
-					animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+					initial={{ opacity: 0 }}
+					animate={inView ? { opacity: 1 } : { opacity: 0 }}
 					transition={{ duration: 0.5 }}
 					className="flex flex-col items-center mb-12 text-center"
+					style={{ willChange: 'opacity' }}
 				>
 					<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
 						About Me
@@ -45,10 +46,11 @@ export function About() {
 
 				<div className="grid gap-8 md:grid-cols-2 lg:gap-12">
 					<motion.div
-						initial={{ opacity: 0, x: -20 }}
-						animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+						initial={{ opacity: 0 }}
+						animate={inView ? { opacity: 1 } : { opacity: 0 }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 						className="space-y-4"
+						style={{ willChange: 'opacity' }}
 					>
 						<h3 className="text-2xl font-bold">My Story</h3>
 						<p className="text-muted-foreground">
@@ -70,10 +72,11 @@ export function About() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: 20 }}
-						animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+						initial={{ opacity: 0 }}
+						animate={inView ? { opacity: 1 } : { opacity: 0 }}
 						transition={{ duration: 0.5, delay: 0.4 }}
 						className="space-y-4"
+						style={{ willChange: 'opacity' }}
 					>
 						<h3 className="text-2xl font-bold">Education & Experience</h3>
 						<div className="space-y-4">

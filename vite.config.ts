@@ -34,7 +34,25 @@ export default defineConfig({
 					'react-three-rapier': ['@react-three/rapier'],
 					'framer': ['framer-motion'],
 					'vendor': ['react', 'react-dom', 'react/jsx-runtime'],
+					'router': ['@tanstack/react-router'],
+					'query': ['@tanstack/react-query'],
+					'ui-components': [
+						'@radix-ui/react-dialog',
+						'@radix-ui/react-dropdown-menu',
+						'@radix-ui/react-progress',
+						'@radix-ui/react-toast',
+					],
 				},
+			},
+		},
+		// Enable CSS code splitting
+		cssCodeSplit: true,
+		// Minimize and optimize assets
+		minify: 'terser',
+		terserOptions: {
+			compress: {
+				drop_console: true,
+				drop_debugger: true,
 			},
 		},
 	},

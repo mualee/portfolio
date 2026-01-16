@@ -107,7 +107,7 @@ const scrollToSection = (sectionId: string) => {
 								rel="noopener noreferrer"
 								aria-label="GitHub"
 							>
-								<Button variant="ghost" size="icon">
+								<Button variant="ghost" id="github" aria-label="GitHub" size="icon">
 									<Github className="w-5 h-5" />
 								</Button>
 							</a>
@@ -117,7 +117,7 @@ const scrollToSection = (sectionId: string) => {
 								rel="noopener noreferrer"
 								aria-label="Facebook"
 							>
-								<Button variant="ghost" size="icon">
+								<Button variant="ghost" id="facebook" aria-label="Facebook" size="icon">
 									<Facebook  className="w-5 h-5" />
 								</Button>
 							</a>
@@ -127,7 +127,7 @@ const scrollToSection = (sectionId: string) => {
 								rel="noopener noreferrer"
 								aria-label="WhatsApp"
 							>
-								<Button variant="ghost" size="icon">
+								<Button variant="ghost" id="whatsapp" aria-label="WhatsApp" size="icon">
 									<MessageCircleMore  className="w-5 h-5" />
 								</Button>
 							</a>
@@ -144,7 +144,7 @@ const scrollToSection = (sectionId: string) => {
 								<img
 									src="/images/mualee1.jpg"
 									// src="/images/mualee.png"
-									alt="Profile"
+									alt="mualee"
 									className="object-cover w-full h-full "
 								/>
 							</div> */}
@@ -157,15 +157,16 @@ const scrollToSection = (sectionId: string) => {
 						className="flex items-center justify-center lg:hidden"
 						initial={{ opacity: 0, scale: 0.8 }}
 						animate={{ opacity: 1, scale: 1 }}
-						transition={{ delay: 0.3, duration: 0.5 }}
+						transition={{ delay: 0.1, duration: 0.2 }}
 					>
 						<div className="relative h-[307.2px] w-[204.6px]  from-primary via-purple-100 to-primary/50 p-1">
 							<div className="absolute inset-0 overflow-hidden ">
 								<img
 									src="/images/mualee_small.png"
 									// src="/images/mualee.png"
-									alt="Profile"
-									className="object-cover w-full h-full "
+									alt="mualee"								width="204.6"
+								height="307.2"
+								loading="eager"									className="object-cover w-full h-full "
 								/>
 							</div>
 						</div>
@@ -191,6 +192,9 @@ const scrollToSection = (sectionId: string) => {
 						<img 
 							src="/cv/CV.png" 
 							alt="CV Preview" 
+							width="595"
+							height="842"
+							loading="lazy"
 							className="w-full h-auto rounded-lg shadow-lg"
 						/>
 					</div>

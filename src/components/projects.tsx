@@ -125,6 +125,9 @@ export function Projects() {
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
+                    width="500"
+                    height="300"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
