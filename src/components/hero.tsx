@@ -153,11 +153,11 @@ const scrollToSection = (sectionId: string) => {
 						</Suspense>
 						</motion.div>
 					</div>
-					<motion.div
+					<div
 						className="flex items-center justify-center lg:hidden"
-						initial={{ opacity: 0, scale: 0.8 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ delay: 0.1, duration: 0.2 }}
+						// initial={{ opacity: 0, scale: 0.8 }}
+						// animate={{ opacity: 1, scale: 1 }}
+						// transition={{ delay: 0.1, duration: 0.2 }}
 					>
 						<div className="relative h-[307.2px] w-[204.6px]  from-primary via-purple-100 to-primary/50 p-1">
 							<div className="absolute inset-0 overflow-hidden ">
@@ -170,7 +170,7 @@ const scrollToSection = (sectionId: string) => {
 								/>
 							</div>
 						</div>
-					</motion.div>
+					</div>
 				</div>
 				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
 					<a 
