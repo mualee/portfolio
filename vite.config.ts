@@ -47,13 +47,7 @@ export default defineConfig({
 		},
 		// Enable CSS code splitting
 		cssCodeSplit: true,
-		// Minimize and optimize assets
-		minify: 'terser',
-		terserOptions: {
-			compress: {
-				drop_console: true,
-				drop_debugger: true,
-			},
-		},
+		// Minimize using esbuild (faster than terser)
+		minify: 'esbuild',
 	},
 });
