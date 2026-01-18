@@ -4,8 +4,8 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Facebook , MessageCircleMore , Download } from "lucide-react";
 import { motion } from "framer-motion";
-import {Snowfall  } from "react-snowfall";
-import { useTheme } from "./theme-provider";
+// import {Snowfall  } from "react-snowfall";
+// import { useTheme } from "./theme-provider";
 import {
 	Dialog,
 	DialogContent,
@@ -20,7 +20,7 @@ export function Hero() {
 	const [mounted, setMounted] = useState(false);
 	const [showCVDialog, setShowCVDialog] = useState(false);
 	const [showCard3d, setShowCard3d] = useState(false);
-	const { theme } = useTheme();
+	// const { theme } = useTheme();
 
 	useEffect(() => {
 		setMounted(true);
@@ -61,14 +61,14 @@ const scrollToSection = (sectionId: string) => {
 			id="home"
 			className="relative pb-20 overflow-hidden lg:pt-10 lg:pb-20 md:pb-32 md:pt-2 bg-gradient-to-b from-background to-background/70 dark:from-background dark:to-background/40"
 		>
-			<Snowfall color={theme === "dark" ? "#dee4fd" : theme === "light" ?"red": "#dee4fd"}/>
+			{/* <Snowfall color={theme === "dark" ? "#dee4fd" : theme === "light" ?"red": "#dee4fd"}/> */}
 			<div className="container px-4 md:px-6">
 				<div className="grid w-full lg:relative sm:gap-2 gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<motion.div
 						className="flex flex-col justify-center order-2 w-full space-y-4 lg:absolute lg:order-1"
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
+						transition={{ duration: 0.1 }}
 					>
 						<div className="space-y-2">
 							<h1 className="text-3xl font-bold sm:text-5xl xl:text-6xl/none">
