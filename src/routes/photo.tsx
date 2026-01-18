@@ -86,7 +86,7 @@ function PhotoPage() {
         <Card>
           <CardContent className="p-6">
             {/* Image Grid - 3 columns x 3 rows */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
               {currentImages.map((img) => (
                 <div
                   key={img.id}
@@ -110,9 +110,11 @@ function PhotoPage() {
             </div>
 
             {/* Image Dialog */}
-            <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+            <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}
+              
+              >
 
-                  <DialogContent className="w-auto max-w-sm">
+                  <DialogContent className="w-[90vw]  lg:w-auto lg:max-w-sm">
                 <DialogHeader >
                   <DialogTitle>Mualee</DialogTitle>
                  

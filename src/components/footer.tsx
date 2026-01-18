@@ -5,8 +5,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="justify-center py-6 border-t md:py-0">
-      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+    <footer className="flex items-center justify-center py-6 border-t md:py-0">
+      <div className="container flex flex-col items-center justify-between gap-4 px-20 sm:px-5 md:h-24 md:flex-row">
         <p className="text-sm leading-loose text-center text-muted-foreground md:text-left">
           © {currentYear} Mua LEE. All rights reserved. Built with{" "}
           <Heart className="inline-block w-4 h-4 text-red-500 transition-transform duration-300 hover:scale-110 hover:text-red-600 " />

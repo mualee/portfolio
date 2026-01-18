@@ -70,6 +70,6 @@ function IndexPage() {
 					
 				</div>
 			</main>
-			{/* <Footer /> */}
+			<Footer />
 	</div>);
 }
