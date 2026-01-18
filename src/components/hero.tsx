@@ -153,7 +153,7 @@ const scrollToSection = (sectionId: string) => {
 						</Suspense>
 						</motion.div>
 					</div>
-					<div
+					{/* <div
 						className="flex items-center justify-center lg:hidden"
 						// initial={{ opacity: 0, scale: 0.8 }}
 						// animate={{ opacity: 1, scale: 1 }}
@@ -170,7 +170,17 @@ const scrollToSection = (sectionId: string) => {
 								/>
 							</div>
 						</div>
-					</div>
+					</div> */}
+<div className="flex items-center justify-center lg:hidden">
+			<img
+				src="/images/mualee_small.png"
+				alt="Mualee portrait"
+				width={205}
+				height={307}
+				loading="eager"
+				className="object-cover rounded-lg shadow-lg w-[204.6px] h-[307.2px]"
+			/>
+		</div>
 				</div>
 				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
 					<a 
