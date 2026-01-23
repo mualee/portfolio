@@ -61,7 +61,7 @@ function IndexPage() {
 			<Navbar />
 			<main className="pb-20 ">
 				<div className="flex flex-col items-center justify-center gap-12 overflow-hidden overflow-y-auto">
-					{/* <Hero /> */}
+					<Hero />
 					<About />
 					{/* <AllLogo/> */}
 					{/* <Projects /> */}
