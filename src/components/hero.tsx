@@ -26,7 +26,7 @@ export function Hero() {
 		setMounted(true);
 		const timer = setTimeout(() => {
 			setShowCard3d(true);
-		}, 2500); // 2.5 seconds
+		}, 100); // 2.5 seconds
 		return () => clearTimeout(timer);
 	}, []);
 const scrollToSection = (sectionId: string) => {
@@ -136,9 +136,7 @@ const scrollToSection = (sectionId: string) => {
 					<div className="hidden lg:block h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[1800px] ">
 						<motion.div
 							className={`${showCard3d ? 'hidden lg:block' : 'hidden'} flex items-center justify-center w-full h-full `}
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-							transition={{ delay: 0.3, duration: 0.5 }}
+						
 						>
 							{/* <div className="absolute inset-0 overflow-hidden rounded-full">
 								<img

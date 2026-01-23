@@ -20,13 +20,15 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import { useControls } from "leva";
+import tagGLB from '@/assets/lailaolab-tag.glb';
+import clampImg from '@/assets/lailaolab-clamp-black.jpeg'
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 // Preload models and textures
-useGLTF.preload("/lailaolab-tag.glb", false, false);
+useGLTF.preload(tagGLB, false, false);
 
-useTexture.preload("/lailaolab-clamp-black.jpeg");
+useTexture.preload(clampImg);
 
 export default function Card3d() {
 	return (
@@ -91,7 +93,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 	};
 
 	// Load models and textures
-	const { nodes, materials } = useGLTF("/lailaolab-tag.glb");
+	const { nodes, materials } = useGLTF(tagGLB);
 
 	for (const node of Object.values(nodes)) {
 		if (node instanceof THREE.Mesh) {
@@ -99,7 +101,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 		}
 	}
 
-	const texture = useTexture("/lailaolab-clamp-black.jpeg");
+	const texture = useTexture(clampImg);
 
 	const { width, height } = useThree((state) => state.size);
 	

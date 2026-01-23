@@ -15,6 +15,7 @@ export default defineConfig({
 		// 	project: "soe-admin",
 		// }),
 	],
+	  assetsInclude: ['**/*.glb'],
 
 	resolve: {
 		alias: {
