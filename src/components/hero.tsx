@@ -6,6 +6,8 @@ import { ArrowDown, Github, Facebook , MessageCircleMore , Download } from "luci
 import { motion } from "framer-motion";
 // import {Snowfall  } from "react-snowfall";
 // import { useTheme } from "./theme-provider";
+import mualee from '@/assets/mualee_small.png';
+
 import {
 	Dialog,
 	DialogContent,
@@ -171,7 +173,7 @@ const scrollToSection = (sectionId: string) => {
 					</div> */}
 <div className="flex items-center justify-center lg:hidden">
 			<img
-				src="/images/mualee_small.png"
+				src={mualee}
 				alt="Mualee portrait"
 				width={205}
 				height={307}
