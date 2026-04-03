@@ -192,7 +192,7 @@ export function Hero() {
 							scrollToSection("#about".substring(1));
 						}}
 						aria-label="Scroll down">
-						<Button name="go_down" variant="ghost" size="icon">
+						<Button name="go_down" aria-label="Scroll down" variant="ghost" size="icon">
 
 							<Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
 								<DialogContent className="max-w-xl max-h-[90vh] overflow-auto">
