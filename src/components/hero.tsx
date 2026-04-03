@@ -6,7 +6,7 @@ import { ArrowDown, Github, Facebook , MessageCircleMore , Download } from "luci
 import { motion } from "framer-motion";
 // import {Snowfall  } from "react-snowfall";
 // import { useTheme } from "./theme-provider";
-import mualee from '@/assets/mualee_small.png';
+import mualee from '@/assets/mualee_small.webp';
 
 import {
 	Dialog,
