@@ -15,49 +15,18 @@ const Footer = lazy(() => import("@/components/footer").then(m => ({ default: m.
 // Helmet loaded lazily since it's not critical for initial render
 import { Helmet } from 'react-helmet';
 
-const product ={
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "mualee",
-  "description": "Mualee is a performant web applications using React, TypeScript, and cutting-edge frontend technologies with a strong emphasis on user experience, animations, and accessibility.",
-  "image": "https://mualee.com/images/mualee2.JPG",	
-  }
-
 export const Route = createFileRoute("/")({
 	component: IndexPage,
 });
 
 function IndexPage() {
-	// Instance
-	
-	
-
-	// States
-	
-
-
-
-	// Hooks
-	
-
-	// Function
-	
-
 	return (
 		<div className="relative px-4 md:px-0 scroll-smooth">
 			<Helmet>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Product",
-              "name": "${product.name}",
-              "description": "${product.description}",
-              "image": "${product.image}"
-            }
-          `}
-        </script>
-      </Helmet>
+				<title>MuaLee (ມົວລີ) | Full Stack Developer - SSMI Laos | mualee.com</title>
+				<meta name="description" content="MuaLee (ມົວລີ, ມົວ, ມົວ ລີ) - Full Stack Developer at SSMI Laos. Portfolio by Mua Lee (mualee, Mualee, Mua lee). React & TypeScript expert. ssmilaos | mualee.com" />
+				<link rel="canonical" href="https://mualee.com" />
+			</Helmet>
 			<Navbar />
 			<main className="pb-20 ">
 				<div className="flex flex-col items-center justify-center gap-12 overflow-hidden overflow-y-auto">

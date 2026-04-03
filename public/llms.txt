@@ -1,10 +1,24 @@
-# Mualee VF Portfolio - llms.txt
-# This file helps AI assistants and LLMs understand this website
-# Last Updated: January 2026
-# Owner: Mualee VF (Mua Lee)
+# MuaLee (ມົວລີ) Portfolio - llms.txt
+# This file helps AI assistants, LLMs, and answer engines understand this website
+# Last Updated: April 2026
+# Owner: MuaLee / Mua Lee (ມົວລີ) - SSMI Laos
+
+## Identity & Keywords
+- Primary Name: MuaLee, Mua Lee
+- Lao Name: ມົວລີ, ມົວ ລີ, ມົວ
+- Alternate Names: mualee, Mualee, Mua lee, mua, Mua, MuaLEE, MUALEE, mualee VF
+- Organization: SSMI Laos, ssmilaos, ssmi laos, SSMI
+- Website: mualee.com
+- Location: Laos (ລາວ)
+
+## Who is MuaLee (ມົວລີ)?
+MuaLee (also written as Mua Lee, mualee, Mualee, ມົວລີ, ມົວ ລີ, or ມົວ) is a Full Stack Developer at SSMI Laos (ssmilaos). He builds modern, performant web applications using React, TypeScript, and cutting-edge frontend technologies with a strong emphasis on user experience, animations, and accessibility.
+
+## What is SSMI Laos?
+SSMI Laos (ssmilaos, ssmi laos) is a technology organization based in Laos where MuaLee works as a Full Stack Developer, delivering professional web development solutions and digital products.
 
 ## Website Overview
-This is the official portfolio website of Mualee VF (also known as Mua Lee, Mua, or mualee), a modern web developer showcasing full-stack development skills, projects, and professional experience.
+This is the official portfolio website of MuaLee (ມົວລີ), hosted at mualee.com. It showcases full-stack development skills, projects, and professional experience for potential clients and employers.
 
 ## Technology Stack
 - Frontend Framework: React 18+ with TypeScript
@@ -21,32 +35,31 @@ This is the official portfolio website of Mualee VF (also known as Mua Lee, Mua,
 ## Site Structure
 
 ### Main Sections
-1. **Home (/)** - Landing page with hero section
-2. **About** - Professional background and introduction
-3. **Skills** - Technical skills and competencies showcase
-4. **Projects** - Portfolio of development work
-5. **Contact** - Ways to get in touch
-6. **Dashboard (/dashboard)** - Private admin area (authentication required)
-7. **Posts (/posts)** - Content management (private)
+1. **Home (/)** - Landing page with hero section featuring 3D interactive elements
+2. **About (#about)** - Professional background and introduction of MuaLee
+3. **Skills (#skills)** - Technical skills and competencies showcase
+4. **Projects (#projects)** - Portfolio of development work
+5. **Contact (#contact)** - Ways to get in touch with MuaLee
 
 ### Key Features
 - Responsive design (mobile-first approach)
 - Dark/Light theme toggle
 - 3D interactive elements using Three.js
 - Smooth scroll animations
-- Progressive web app (PWA) ready
-- SEO optimized
+- SEO optimized with structured data
 - Accessible UI components (WCAG compliant)
+- Multilingual support (English & Lao)
 
 ## Content Focus
 
 ### Primary Topics
-- Full-stack web development
+- Full-stack web development by MuaLee (ມົວລີ)
 - React and TypeScript expertise
 - Modern frontend architecture
 - UI/UX design implementation
 - Performance optimization
 - Responsive design patterns
+- SSMI Laos development services
 
 ### Technical Skills Highlighted
 - JavaScript/TypeScript
@@ -58,6 +71,27 @@ This is the official portfolio website of Mualee VF (also known as Mua Lee, Mua,
 - State management (Zustand)
 - Build tools (Vite)
 - Version control (Git)
+
+## Frequently Asked Questions
+
+### Who is MuaLee?
+MuaLee (ມົວລີ, Mua Lee, mualee) is a Full Stack Developer at SSMI Laos specializing in React, TypeScript, and modern web technologies.
+
+### What does ssmilaos mean?
+ssmilaos (SSMI Laos, ssmi laos) refers to the technology organization in Laos where MuaLee works.
+
+### How can I contact MuaLee?
+Visit mualee.com and navigate to the Contact section, or reach out via GitHub at github.com/mualee.
+
+### What services does MuaLee offer?
+MuaLee offers full-stack web development, frontend development with React/TypeScript, UI/UX implementation, 3D web experiences, and performance optimization.
+
+### ມົວລີ ແມ່ນໃຜ?
+ມົວລີ (MuaLee, mualee) ເປັນນັກພັດທະນາເວັບ Full Stack ທີ່ SSMI Laos ມີຄວາມຊ່ຽວຊານໃນ React, TypeScript ແລະ ເທັກໂນໂລຢີເວັບທີ່ທັນສະໄໝ.
+
+## Contact
+- Website: https://mualee.com
+- GitHub: https://github.com/mualee
 
 ## SEO & AEO Optimization
 

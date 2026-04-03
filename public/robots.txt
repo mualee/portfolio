@@ -1,0 +1,40 @@
+# robots.txt for mualee.com
+# MuaLee (ມົວລີ) Portfolio - SSMI Laos
+
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /posts
+Disallow: /login
+
+# Allow search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow AI crawlers for AEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://mualee.com/sitemap.xml
+
+# LLMs
+Host: https://mualee.com
