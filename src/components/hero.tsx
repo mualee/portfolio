@@ -2,7 +2,7 @@
 
 import { useEffect, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Facebook , MessageCircleMore , Download } from "lucide-react";
+import { ArrowDown, Github, Facebook, MessageCircleMore, Download } from "lucide-react";
 import { motion } from "framer-motion";
 // import {Snowfall  } from "react-snowfall";
 // import { useTheme } from "./theme-provider";
@@ -31,7 +31,7 @@ export function Hero() {
 		}, 1); // 2.5 seconds
 		return () => clearTimeout(timer);
 	}, []);
-const scrollToSection = (sectionId: string) => {
+	const scrollToSection = (sectionId: string) => {
 		const element = document.getElementById(sectionId);
 		if (element) {
 			element.scrollIntoView({ behavior: "smooth" });
@@ -93,9 +93,9 @@ const scrollToSection = (sectionId: string) => {
 							<Button size="lg" className="font-medium">
 								View My Work
 							</Button>
-							<Button 
-								size="lg" 
-								variant="outline" 
+							<Button
+								size="lg"
+								variant="outline"
 								className="font-medium"
 								onClick={() => setShowCVDialog(true)}
 							>
@@ -120,7 +120,7 @@ const scrollToSection = (sectionId: string) => {
 								aria-label="Facebook"
 							>
 								<Button variant="ghost" id="facebook" aria-label="Facebook" size="icon">
-									<Facebook  className="w-5 h-5" />
+									<Facebook className="w-5 h-5" />
 								</Button>
 							</a>
 							<a
@@ -130,7 +130,7 @@ const scrollToSection = (sectionId: string) => {
 								aria-label="WhatsApp"
 							>
 								<Button variant="ghost" id="whatsapp" aria-label="WhatsApp" size="icon">
-									<MessageCircleMore  className="w-5 h-5" />
+									<MessageCircleMore className="w-5 h-5" />
 								</Button>
 							</a>
 						</div>
@@ -138,7 +138,7 @@ const scrollToSection = (sectionId: string) => {
 					<div className="hidden lg:block h-[350px] order-1 lg:order-2 w-full sm:w-[400px] lg:h-[500px] lg:w-[1800px] ">
 						<motion.div
 							className={`${showCard3d ? 'hidden lg:block' : 'hidden'} flex items-center justify-center w-full h-full `}
-						
+
 						>
 							{/* <div className="absolute inset-0 overflow-hidden rounded-full">
 								<img
@@ -148,9 +148,9 @@ const scrollToSection = (sectionId: string) => {
 									className="object-cover w-full h-full "
 								/>
 							</div> */}
-						<Suspense fallback={<div className="w-full h-full rounded-lg justify-left animate-pulse bg-muted" />}>
-							<Card3d/>
-						</Suspense>
+							<Suspense fallback={<div className="w-full h-full rounded-lg justify-left animate-pulse bg-muted" />}>
+								<Card3d />
+							</Suspense>
 						</motion.div>
 					</div>
 					{/* <div
@@ -171,72 +171,72 @@ const scrollToSection = (sectionId: string) => {
 							</div>
 						</div>
 					</div> */}
-<div className="flex items-center justify-center lg:hidden">
-			<img
-				src={mualee}
-				alt="Mualee portrait"
-				width={205}
-				height={307}
-				loading="eager"
-				className="object-cover rounded-lg shadow-lg w-[204.6px] h-[307.2px]"
-			/>
-		</div>
-				</div>
-				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
-					<a 
-					key="#about"
-										href="#about"
-										onClick={(e) => {
-											e.preventDefault();
-											scrollToSection("#about".substring(1));
-										}}
-					aria-label="Scroll down">
-						<Button variant="ghost" size="icon">
-
-			<Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
-				<DialogContent className="max-w-xl max-h-[90vh] overflow-auto">
-					<DialogHeader>
-						<DialogTitle>CV Preview</DialogTitle>
-					</DialogHeader>
-					<div className="flex items-center justify-center p-4">
-						<img 
-							src="/cv/CV.png" 
-							alt="CV Preview" 
-							width="595"
-							height="842"
-							loading="lazy"
-							className="w-full h-auto rounded-lg shadow-lg"
+					<div className="flex items-center justify-center lg:hidden">
+						<img
+							src={mualee}
+							alt="Mualee portrait"
+							width={205}
+							height={307}
+							loading="eager"
+							className="object-cover rounded-lg shadow-lg w-[204.6px] h-[307.2px]"
 						/>
 					</div>
-					<DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-between">
-						<Button
-							variant="outline"
-							onClick={() => setShowCVDialog(false)}
-						>
-							Cancel
-						</Button>
-						<div className="flex gap-2">
-							<Button
-								variant="default"
-								onClick={handleDownloadPNG}
-								className="gap-2"
-							>
-								<Download className="w-4 h-4" />
-								Download PNG
-							</Button>
-							<Button
-								variant="default"
-								onClick={handleDownloadPDF}
-								className="gap-2"
-							>
-								<Download className="w-4 h-4" />
-								Download PDF
-							</Button>
-						</div>
-					</DialogFooter>
-				</DialogContent>
-			</Dialog>
-							<ArrowDown className="w-6 h-6" />
+				</div>
+				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
+					<a
+						key="#about"
+						href="#about"
+						onClick={(e) => {
+							e.preventDefault();
+							scrollToSection("#about".substring(1));
+						}}
+						aria-label="Scroll down">
+						<Button variant="ghost" size="icon">
+
+							<Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
+								<DialogContent className="max-w-xl max-h-[90vh] overflow-auto">
+									<DialogHeader>
+										<DialogTitle>CV Preview</DialogTitle>
+									</DialogHeader>
+									<div className="flex items-center justify-center p-4">
+										<img
+											src="/cv/CV.png"
+											alt="CV Preview"
+											width="595"
+											height="842"
+											loading="lazy"
+											className="w-full h-auto rounded-lg shadow-lg"
+										/>
+									</div>
+									<DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+										<Button
+											variant="outline"
+											onClick={() => setShowCVDialog(false)}
+										>
+											Cancel
+										</Button>
+										<div className="flex gap-2">
+											<Button
+												variant="default"
+												onClick={handleDownloadPNG}
+												className="gap-2"
+											>
+												<Download className="w-4 h-4" />
+												Download PNG
+											</Button>
+											<Button
+												variant="default"
+												onClick={handleDownloadPDF}
+												className="gap-2"
+											>
+												<Download className="w-4 h-4" />
+												Download PDF
+											</Button>
+										</div>
+									</DialogFooter>
+								</DialogContent>
+							</Dialog>
+							<ArrowDown name="go down" className="w-6 h-6" />
 						</Button>
 					</a>
 				</div>

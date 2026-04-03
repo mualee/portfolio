@@ -5,12 +5,11 @@ import { useNavigate } from "@tanstack/react-router";
 
 // Icons
 import {
-	BadgeCheck,
-	Bell,
+
 	ChevronsUpDown,
-	CreditCard,
+
 	LogOut,
-	Sparkles,
+	
 	UserCog,
 } from "lucide-react";
 
