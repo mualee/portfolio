@@ -8,6 +8,7 @@ import {
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NotFound } from "@/components/notFound";
+import { HelmetProvider } from "react-helmet-async";
 
 // UI Provider
 import { Toaster } from "@/components/ui/toaster";
@@ -25,7 +26,7 @@ export const Route = createRootRouteWithContext<{
 
 function Root() {
 	return (
-		<>
+		<HelmetProvider>
 			<ThemeProvider>
 				<Outlet />
 			</ThemeProvider>
@@ -34,6 +35,6 @@ function Root() {
 			{/* Dev Tools for TanStack Router */}
 			{/* <TanStackRouterDevtools /> */}
 			<Toaster />
-		</>
+		</HelmetProvider>
 	);
 }

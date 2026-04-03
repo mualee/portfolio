@@ -95,12 +95,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 	// Load models and textures
 	const { nodes, materials } = useGLTF(tagGLB);
 
-	for (const node of Object.values(nodes)) {
-		if (node instanceof THREE.Mesh) {
-			console.log(node.geometry, node.material);
-		}
-	}
-
 	const texture = useTexture(clampImg);
 
 	const { width, height } = useThree((state) => state.size);

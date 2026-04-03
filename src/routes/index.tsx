@@ -13,7 +13,7 @@ const Contact = lazy(() => import("@/components/contact").then(m => ({ default: 
 const Footer = lazy(() => import("@/components/footer").then(m => ({ default: m.Footer })));
 
 // Helmet loaded lazily since it's not critical for initial render
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export const Route = createFileRoute("/")({
 	component: IndexPage,
