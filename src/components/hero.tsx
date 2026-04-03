@@ -28,7 +28,7 @@ export function Hero() {
 		setMounted(true);
 		const timer = setTimeout(() => {
 			setShowCard3d(true);
-		}, 100); // 2.5 seconds
+		}, 1); // 2.5 seconds
 		return () => clearTimeout(timer);
 	}, []);
 const scrollToSection = (sectionId: string) => {
