@@ -109,10 +109,10 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 	const [curve] = useState(
 		() =>
 			new THREE.CatmullRomCurve3([
-				new THREE.Vector3(),
-				new THREE.Vector3(),
-				new THREE.Vector3(),
-				new THREE.Vector3(),
+				new THREE.Vector3(0, 0, 0),
+				new THREE.Vector3(0, 0, 0),
+				new THREE.Vector3(0, 0, 0),
+				new THREE.Vector3(0, 0, 0),
 			]),
 	);
 	const [dragged, setDragged] = useState(false);
@@ -137,6 +137,13 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 		};
 	}, [hovered, dragged]);
 
+	// Initialize band geometry with valid points to prevent NaN bounding sphere
+	useEffect(() => {
+		if (band.current?.geometry) {
+			band.current.geometry.setPoints(curve.getPoints(32));
+		}
+	}, [curve]);
+
 	// Frame-by-frame updates
 	useFrame((state, delta) => {
 		if (dragged instanceof THREE.Vector3) {
@@ -155,6 +162,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
 		if (fixed.current) {
 			for (const ref of [j1, j2]) {
+				if (!ref.current) continue;
 				if (!ref.current.lerped) {
 					ref.current.lerped = new THREE.Vector3().copy(
 						ref.current.translation(),
@@ -173,11 +181,13 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 			}
 
 			// Calculate the catmull-rom curve
-			curve.points[0].copy(j3.current.translation());
-			curve.points[1].copy(j2.current.lerped);
-			curve.points[2].copy(j1.current.lerped);
-			curve.points[3].copy(fixed.current.translation());
-			band.current.geometry.setPoints(curve.getPoints(32));
+			if (j3.current && j2.current?.lerped && j1.current?.lerped) {
+				curve.points[0].copy(j3.current.translation());
+				curve.points[1].copy(j2.current.lerped);
+				curve.points[2].copy(j1.current.lerped);
+				curve.points[3].copy(fixed.current.translation());
+				band.current.geometry.setPoints(curve.getPoints(32));
+			}
 
 			// Tilt it back towards the screen
 			ang.copy(card.current.angvel());
