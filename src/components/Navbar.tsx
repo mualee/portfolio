@@ -130,7 +130,7 @@ const Navbar = () => {
 						</div>
 						<Sheet>
 							<SheetTrigger asChild>
-								<Button variant={"outline"} name="mobile menu" size={"icon"} className="mr-4">
+								<Button variant={"outline"} name="mobile_menu" size={"icon"} className="mr-4">
 									<Menu className="size-4 " />
 								</Button>
 							</SheetTrigger>

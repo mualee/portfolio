@@ -183,7 +183,8 @@ export function Hero() {
 					</div>
 				</div>
 				<div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 animate-bounce">
-					<a
+					<a  
+					
 						key="#about"
 						href="#about"
 						onClick={(e) => {
@@ -191,7 +192,7 @@ export function Hero() {
 							scrollToSection("#about".substring(1));
 						}}
 						aria-label="Scroll down">
-						<Button variant="ghost" size="icon">
+						<Button name="go_down" variant="ghost" size="icon">
 
 							<Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
 								<DialogContent className="max-w-xl max-h-[90vh] overflow-auto">
@@ -236,7 +237,7 @@ export function Hero() {
 									</DialogFooter>
 								</DialogContent>
 							</Dialog>
-							<ArrowDown name="go down" className="w-6 h-6" />
+							<ArrowDown  className="w-6 h-6" />
 						</Button>
 					</a>
 				</div>
