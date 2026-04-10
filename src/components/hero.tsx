@@ -90,7 +90,8 @@ export function Hero() {
 							with modern technologies.
 						</motion.p>
 						<div className="flex z-50  flex-col gap-2 min-[400px]:flex-row">
-							<Button size="lg" className="font-medium">
+							{/* go to ssmilaos.com */}
+							<Button size="lg" className="font-medium" onClick={() => window.open("https://ssmilaos.com", "_blank")}>
 								View My Work
 							</Button>
 							<Button
