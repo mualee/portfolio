@@ -26,6 +26,10 @@ function IndexPage() {
 				<title>MuaLee (ມົວລີ) | Full Stack Developer - SSMI Laos | mualee.com</title>
 				<meta name="description" content="MuaLee (ມົວລີ, ມົວ, ມົວ ລີ) - Full Stack Developer at SSMI Laos. Portfolio by Mua Lee (mualee, Mualee, Mua lee). React & TypeScript expert. ssmilaos | mualee.com" />
 				<link rel="canonical" href="https://mualee.com" />
+				<meta http-equiv="Content-Language" content="en" />
+				<meta http-equiv="Content-Language" content="lo" />
+				  <meta charSet="UTF-8" />
+				  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</Helmet>
 			<Navbar />
 			<main className="pb-20 ">
