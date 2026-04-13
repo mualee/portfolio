@@ -1,6 +1,6 @@
 
 import { createFileRoute } from "@tanstack/react-router";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 
 // Critical above-fold components loaded immediately
 import Navbar from "@/components/Navbar";
