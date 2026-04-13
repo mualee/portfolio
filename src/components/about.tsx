@@ -25,7 +25,7 @@ export function About() {
 // ];
 
 	return (
-		<section id="about" className="py-20  bg-muted/20 dark:bg-muted/5">
+		<section id="about" className="py-20 bg-muted/20 dark:bg-muted/5">
 			<div className="container px-4 md:px-6">
 				<motion.div
 					ref={ref}
@@ -54,7 +54,7 @@ export function About() {
 					>
 						<h3 className="text-2xl font-bold">My Story</h3>
 						<p className="text-muted-foreground">
-							I'm a passionate full-stack developer with over 5 years of
+							I'm a passionate full-stack developer with over 3 years of
 							experience building web applications. I specialize in JavaScript,
 							React, Node.js, and modern web technologies.
 						</p>
