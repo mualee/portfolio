@@ -12,9 +12,6 @@ const Skills = lazy(() => import("@/components/skills").then(m => ({ default: m.
 const Contact = lazy(() => import("@/components/contact").then(m => ({ default: m.Contact })));
 const Footer = lazy(() => import("@/components/footer").then(m => ({ default: m.Footer })));
 
-// Helmet loaded lazily since it's not critical for initial render
-import { Helmet } from 'react-helmet-async';
-
 export const Route = createFileRoute("/")({
 	component: IndexPage,
 });
@@ -22,15 +19,6 @@ export const Route = createFileRoute("/")({
 function IndexPage() {
 	return (
 		<div className="relative px-4 md:px-0 scroll-smooth">
-			<Helmet>
-				<title>MuaLee (ມົວລີ) | Full Stack Developer - SSMI Laos | mualee.com</title>
-				<meta name="description" content="MuaLee (ມົວລີ, ມົວ, ມົວ ລີ) - Full Stack Developer at SSMI Laos. Portfolio by Mua Lee (mualee, Mualee, Mua lee). React & TypeScript expert. ssmilaos | mualee.com" />
-				<link rel="canonical" href="https://mualee.com" />
-				<meta http-equiv="Content-Language" content="en" />
-				<meta http-equiv="Content-Language" content="lo" />
-				  <meta charSet="UTF-8" />
-				  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			</Helmet>
 			<Navbar />
 			<main className="pb-20 ">
 				<div className="flex flex-col items-center justify-center gap-12 overflow-hidden overflow-y-auto">

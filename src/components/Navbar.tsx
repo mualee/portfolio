@@ -2,13 +2,19 @@
 
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { buttonVariants, Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { lazy, Suspense, useState } from 'react';
+
+// Inline the navigation menu trigger style to avoid importing @radix-ui/react-navigation-menu
+const navTriggerStyle = "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50";
+
+// Lazy load Sheet - only needed on mobile menu open
+const MobileMenu = lazy(() => import("@/components/MobileMenu"));
 
 const Navbar = () => {
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const scrollToSection = (sectionId: string) => {
 		const element = document.getElementById(sectionId);
 		if (element) {
@@ -48,7 +54,7 @@ const Navbar = () => {
 									to="/"
 									className={cn(
 										"text-muted-foreground cursor-pointer",
-										navigationMenuTriggerStyle,
+										navTriggerStyle,
 										buttonVariants({
 											variant: "ghost",
 										}),
@@ -69,7 +75,7 @@ const Navbar = () => {
 										}}
 										className={cn(
 											"text-muted-foreground",
-											navigationMenuTriggerStyle,
+											navTriggerStyle,
 											buttonVariants({
 												variant: "ghost",
 											}),
@@ -86,7 +92,7 @@ const Navbar = () => {
 										hash={item.href.substring(1)}
 										className={cn(
 											"text-muted-foreground cursor-pointer",
-											navigationMenuTriggerStyle,
+											navTriggerStyle,
 											buttonVariants({
 												variant: "ghost",
 											}),
@@ -103,7 +109,7 @@ const Navbar = () => {
 									to={item.to}
 									className={cn(
 										"text-muted-foreground cursor-pointer",
-										navigationMenuTriggerStyle,
+										navTriggerStyle,
 										buttonVariants({
 											variant: "ghost",
 										}),
@@ -128,70 +134,28 @@ const Navbar = () => {
 							/>
 							<span className="text-xl font-bold">Mualee</span>
 						</div>
-						<Sheet>
-							<SheetTrigger asChild>
-								<Button variant={"outline"} name="mobile_menu" aria-label="Open mobile menu" size={"icon"} className="mr-4">
-									<Menu className="size-4 " />
-								</Button>
-							</SheetTrigger>
-							<SheetContent className="overflow-y-auto">
-								<SheetHeader>
-									<SheetTitle>
-										<div className="flex items-center gap-2">
-											<img
-												src="/logo.png"
-												className="w-12 h-12 dark:invert"
-												alt="logo"
-											/>
-											<span className="text-xl font-bold">Mualee</span>
-										</div>
-									</SheetTitle>
-								</SheetHeader>
-								<div className="flex flex-col gap-4 my-8">
-									{OnIndex ? (
-										navigationItems.map((item) => (
-											<a
-												key={item.href}
-												href={item.href}
-												onClick={(e) => {
-													e.preventDefault();
-													scrollToSection(item.href.substring(1));
-												}}
-												className="font-semibold"
-											>
-												{item.label}
-											</a>
-										))
-									) : (
-										navigationItems.map((item) => (
-											<Link
-												key={item.href}
-												to="/"
-												hash={item.href.substring(1)}
-												className="font-semibold"
-											>
-												{item.label}
-											</Link>
-										))
-									)}
-									
-									{linkItems.map((item) => (
-										<Link
-											key={item.to}
-											to={item.to}
-											className="font-semibold"
-										>
-											{item.label}
-										</Link>
-									))}
-								</div>
-								<div className="pt-4 border-t">
-									<div className="flex flex-col gap-3 mt-2">
-										<ModeToggle />
-									</div>
-								</div>
-							</SheetContent>
-						</Sheet>
+						<Button
+							variant={"outline"}
+							name="mobile_menu"
+							aria-label="Open mobile menu"
+							size={"icon"}
+							className="mr-4"
+							onClick={() => setMobileMenuOpen(true)}
+						>
+							<Menu className="size-4" />
+						</Button>
+						{mobileMenuOpen && (
+							<Suspense fallback={null}>
+								<MobileMenu
+									open={mobileMenuOpen}
+									onOpenChange={setMobileMenuOpen}
+									navigationItems={navigationItems}
+									linkItems={linkItems}
+									onScrollToSection={scrollToSection}
+									isIndex={OnIndex}
+								/>
+							</Suspense>
+						)}
 					</div>
 				</div>
 			</div>

@@ -26,23 +26,23 @@ export default defineConfig({
 	build: {
 		sourcemap: true,
 		chunkSizeWarningLimit: 1000,
+		// Disable modulepreload hints — prevents preloading 3D libs on mobile
+		modulePreload: false,
 		rollupOptions: {
 			output: {
-				manualChunks: {
-					'three': ['three'],
-					'react-three-fiber': ['@react-three/fiber'],
-					'react-three-drei': ['@react-three/drei'],
-					'react-three-rapier': ['@react-three/rapier'],
-					'framer': ['framer-motion'],
-					'vendor': ['react', 'react-dom', 'react/jsx-runtime'],
-					'router': ['@tanstack/react-router'],
-					'query': ['@tanstack/react-query'],
-					'ui-components': [
-						'@radix-ui/react-dialog',
-						'@radix-ui/react-dropdown-menu',
-						'@radix-ui/react-progress',
-						'@radix-ui/react-toast',
-					],
+				manualChunks(id) {
+					// 3D: split three.js and fiber for parallel loading on desktop
+					// (these stay dynamic — only card3d imports them)
+					if (id.includes('node_modules/three/') || id.includes('meshline')) return 'three';
+					if (id.includes('@react-three/fiber')) return 'react-three-fiber';
+					// framer-motion - only used by below-fold lazy components
+					if (id.includes('framer-motion')) return 'framer';
+					// Core vendor — react + react-dom + scheduler (must stay together)
+					if (id.includes('node_modules/react-dom/') || id.includes('node_modules/react/') || id.includes('node_modules/scheduler/')) return 'vendor';
+					// Router - always needed
+					if (id.includes('@tanstack/react-router') || id.includes('@tanstack/history')) return 'router';
+					// react-query
+					if (id.includes('@tanstack/react-query')) return 'query';
 				},
 			},
 		},

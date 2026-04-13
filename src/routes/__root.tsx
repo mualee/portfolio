@@ -8,10 +8,10 @@ import {
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NotFound } from "@/components/notFound";
-import { HelmetProvider } from "react-helmet-async";
+import { lazy, Suspense } from "react";
 
-// UI Provider
-import { Toaster } from "@/components/ui/toaster";
+// Lazy load Toaster - not needed for FCP
+const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
 
 export const Route = createRootRouteWithContext<{
 	queryClient: QueryClient;
@@ -26,15 +26,14 @@ export const Route = createRootRouteWithContext<{
 
 function Root() {
 	return (
-		<HelmetProvider>
-			<ThemeProvider>
-				<Outlet />
-			</ThemeProvider>
+		<ThemeProvider>
+			<Outlet />
 			<ScrollRestoration />
-
 			{/* Dev Tools for TanStack Router */}
 			{/* <TanStackRouterDevtools /> */}
-			<Toaster />
-		</HelmetProvider>
+			<Suspense fallback={null}>
+				<Toaster />
+			</Suspense>
+		</ThemeProvider>
 	);
 }
