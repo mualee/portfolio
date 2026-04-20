@@ -80,7 +80,7 @@ function PhotoPage() {
         <Navbar />
     <div className="container px-4 py-20 mx-auto">
         
-      <h1 className="mb-8 text-4xl font-bold text-center">Photo Gallery</h1>
+      <h2 className="mb-8 text-4xl font-bold text-center">Photo Gallery</h2>
 
       <div className="max-w-4xl mx-auto">
         <Card>

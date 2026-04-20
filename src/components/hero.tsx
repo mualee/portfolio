@@ -44,9 +44,9 @@ export function Hero() {
 						className="flex flex-col justify-center order-2 w-full space-y-4 hero-fade-in lg:absolute lg:order-1"
 					>
 						<div className="space-y-2">
-							<h1 className="text-3xl font-bold sm:text-5xl xl:text-6xl/none">
+							<h2 className="text-3xl font-bold sm:text-5xl xl:text-6xl/none">
 								Hi, I'm <span className="text-primary">Mua LEE</span>
-							</h1>
+							</h2>
 							<p className="max-w-[600px] text-muted-foreground md:text-xl">
 								Frontend Developer & Software Tester
 							</p>
