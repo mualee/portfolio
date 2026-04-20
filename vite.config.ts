@@ -31,18 +31,10 @@ export default defineConfig({
 		rollupOptions: {
 			output: {
 				manualChunks(id) {
-					// 3D: split three.js and fiber for parallel loading on desktop
-					// (these stay dynamic — only card3d imports them)
+					// Only split three.js core — it has no React dependency
 					if (id.includes('node_modules/three/') || id.includes('meshline')) return 'three';
-					if (id.includes('@react-three/fiber')) return 'react-three-fiber';
-					// framer-motion - only used by below-fold lazy components
-					if (id.includes('framer-motion')) return 'framer';
-					// Core vendor — react + react-dom + scheduler (must stay together)
-					if (id.includes('node_modules/react-dom/') || id.includes('node_modules/react/') || id.includes('node_modules/scheduler/')) return 'vendor';
-					// Router - always needed
-					if (id.includes('@tanstack/react-router') || id.includes('@tanstack/history')) return 'router';
-					// react-query
-					if (id.includes('@tanstack/react-query')) return 'query';
+					// Everything else: let Rollup handle chunk splitting naturally
+					// to guarantee correct module resolution order
 				},
 			},
 		},
