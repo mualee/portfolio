@@ -20,7 +20,7 @@ import {
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import { useControls } from "leva";
-import tagGLB from '@/assets/lailaolab-tag.glb';
+import tagGLB from '@/assets/mualee.glb';
 import clampImg from '@/assets/lailaolab-clamp-black.jpeg'
 
 extend({ MeshLineGeometry, MeshLineMaterial });
